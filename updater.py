@@ -1,3 +1,4 @@
+# Needs to have git in global path
 import requests
 import subprocess
 try:
