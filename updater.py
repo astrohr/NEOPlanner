@@ -1,6 +1,17 @@
-# Needs to have git in global path
-import requests
 import subprocess
+
+# requests
+try:
+    import requests
+except:
+    print("Missing requests module")
+    print("Installing...")
+    subprocess.run(["pip3", "install", "requests"],
+                   check=True, stdout=subprocess.PIPE).stdout
+    import requests
+    print("requests installed!")
+
+# Git (needs to be in PATH)
 try:
     import git
 except:
