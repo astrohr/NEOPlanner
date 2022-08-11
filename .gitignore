@@ -127,3 +127,24 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Find Orb
+find_orb/covar.json
+find_orb/covar.txt
+find_orb/debug.txt
+find_orb/elem_short.json
+find_orb/elements.json
+find_orb/elements.txt
+find_orb/environ.dat
+find_orb/gauss.out
+find_orb/guide.txt
+find_orb/measurements.txt
+find_orb/monte.txt
+find_orb/mpc_fmt.txt
+find_orb/sof.txt
+find_orb/sofv.txt
+find_orb/total.json
+
+# Files
+config.json
+initialize.py
