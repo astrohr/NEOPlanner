@@ -23,10 +23,7 @@ except:
     print("GitPython installed!")
 
 
-def check_updates():
-    with open("version") as f:
-        current_version = f.read().strip()
-
+def get_latest():
     url = "https://raw.githubusercontent.com/astrohr/NEOPlanner/main/version"
 
     try:
@@ -36,9 +33,7 @@ def check_updates():
     except:
         return None
 
-    if latest_version != current_version:
-        return latest_version
-    return False
+    return latest_version
 
 
 def update():
@@ -52,13 +47,13 @@ if __name__ == "__main__":
     with open("version") as f:
         current_version = f.read().strip()
     print("Current version:", current_version)
-    status = check_updates()
-    if status:
-        print("New version available:", status)
+    latest_version = get_latest()
+    if latest_version != current_version:
+        print("New version available:", latest_version)
         print("Updating...")
         update()
         print("Update complete")
-    elif status == False:
+    elif latest_version == current_version:
         print(f"You have the latest version ({current_version})")
     else:
         print("Warning: unable to get latest version information!")
