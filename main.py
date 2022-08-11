@@ -1,4 +1,7 @@
+import json
+
 from get_elements import get_elements
+from initialize import initialize
 
 # Test
 measurements = """
@@ -15,7 +18,11 @@ measurements = """
      P21vWjp |C2022 08 09.41307 00 39 30.86 -06 21 05.3          21.4 GVNEOCP807
 """
 
-elements = get_elements("P21vWjp", measurements, "L01")
+initialize()
+with open("config.json") as f:
+    config = json.loads(f.read())
+MPC_CODE = config.get("MPC_CODE")
+elements = get_elements("P21vWjp", measurements, MPC_CODE)
 
 print("q:", elements.get("q"))
 print("e:", elements.get("e"))
